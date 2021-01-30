@@ -3,3 +3,14 @@ body {
   color: white;
   font-family: monospace;
 }
+
+img {
+  width: 10vw;
+}
+
+main {
+  width: 80vw;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}

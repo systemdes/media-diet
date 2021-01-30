@@ -6,4 +6,58 @@
   {{ css | cssmin | safe }}
 </style>
 
-<h1>Hello World</h1>
+<h1>Media Diet</h1>
+
+<header>
+  <nav>
+    <ul>
+      <li>Books</li>
+      <li>Games</li>
+      <li>Series</li>
+      <li>Movies</li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+  <h2>Books</h2>
+
+  {% for item in collections.books %}
+      <article class="item">
+        <img src="https://covers.openlibrary.org/b/isbn/{{ item.data.isbn }}-L.jpg" alt="{{ item.data.title}} book cover" />
+        <h3>{{ item.data.title }}</h2>
+        <h4>{{ item.data.author }}</h3>
+      </article>
+  {% endfor %}
+
+  <h2>Games</h2>
+
+    {% for item in collections.games %}
+      <article class="item">
+        <img src="https://covers.openlibrary.org/b/isbn/{{ item.data.isbn }}-L.jpg" alt="{{ item.data.title}} book cover" />
+        <h3>{{ item.data.title }}</h2>
+        <h4>{{ item.data.platform }}</h3>
+      </article>
+  {% endfor %}
+
+  <h2>Series</h2>
+
+    {% for item in collections.series %}
+      <article class="item">
+        <img src="https://covers.openlibrary.org/b/isbn/{{ item.data.isbn }}-L.jpg" alt="{{ item.data.title}} book cover" />
+        <h3>{{ item.data.title }}</h2>
+        <h4>{{ item.data.platform }}</h3>
+      </article>
+    {% endfor %}
+
+  <h2>Movies</h2>
+
+    {% for item in collections.movies %}
+      <article class="item">
+        <img src="https://covers.openlibrary.org/b/isbn/{{ item.data.isbn }}-L.jpg" alt="{{ item.data.title}} book cover" />
+        <h3>{{ item.data.title }}</h2>
+        <h4>{{ item.data.platform }}</h3>
+      </article>
+    {% endfor %}    
+</main>
