@@ -1,7 +1,14 @@
+html {
+  box-sizing: border-box;
+}
+
 body {
   background: black;
   color: white;
   font-family: monospace;
+  font-size: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
 img {
@@ -13,4 +20,32 @@ main {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+header ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 1em;
+}
+
+header nav {
+  display: flex;
+  border-bottom: 1px solid white;
+}
+
+header > ul {
+  border-bottom: 1px solid white;
+}
+
+header ul li:not(:last-of-type) {
+  margin-right: 1em;
+}
+
+header nav ul:last-of-type {
+  margin-left: auto;
+}
+
+main {
+  margin-top: 10vh;
 }
