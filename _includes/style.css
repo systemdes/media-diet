@@ -18,6 +18,9 @@ img {
 main {
   width: 80vw;
   margin: 0 auto;
+}
+
+.grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -48,4 +51,8 @@ header nav ul:last-of-type {
 
 main {
   margin-top: 10vh;
+}
+
+canvas {
+  margin-top: 20vh;
 }
