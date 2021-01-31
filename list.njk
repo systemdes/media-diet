@@ -13,44 +13,12 @@
 <header>
   <nav>
     <ul>
-      <li><svg
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M5 5C3.34315 5 2 6.34315 2 8V16C2 17.6569 3.34315 19 5 19H19C20.6569 19 22 17.6569 22 16V8C22 6.34315 20.6569 5 19 5H5ZM7 7H5C4.44772 7 4 7.44772 4 8V9H7V7ZM9 7V9H20V8C20 7.44771 19.5523 7 19 7H9ZM7 11H4V13H7V11ZM9 13V11H20V13H9ZM7 15H4V16C4 16.5523 4.44772 17 5 17H7V15ZM9 17V15H20V16C20 16.5523 19.5523 17 19 17H9Z"
-    fill="currentColor"
-  />
-</svg></li>
       <li>Books</li>
       <li>Games</li>
       <li>Series</li>
       <li>Movies</li>
     </ul>
     <ul>
-      <li><svg
-  width="24"
-  height="24"
-  viewBox="0 0 24 24"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
->
-  <path
-    d="M15 17C16.1046 17 17 16.1046 17 15C17 13.8954 16.1046 13 15 13C13.8954 13 13 13.8954 13 15C13 16.1046 13.8954 17 15 17Z"
-    fill="currentColor"
-  />
-  <path
-    fill-rule="evenodd"
-    clip-rule="evenodd"
-    d="M6 3C4.34315 3 3 4.34315 3 6V18C3 19.6569 4.34315 21 6 21H18C19.6569 21 21 19.6569 21 18V6C21 4.34315 19.6569 3 18 3H6ZM5 18V7H19V18C19 18.5523 18.5523 19 18 19H6C5.44772 19 5 18.5523 5 18Z"
-    fill="currentColor"
-  />
-</svg></li>
       <li>2020</li>
       <li>2021</li>
     </ul>
@@ -66,15 +34,14 @@
 
   <h2>Books</h2>
 
-  <div class="grid">
+  <ul>
   {% for item in collections.books %}
-      <article class="item">
-        <img src="https://covers.openlibrary.org/b/isbn/{{ item.data.isbn }}-L.jpg" alt="{{ item.data.title}} book cover" />
-        <h3>{{ item.data.title }}</h2>
-        <h4>by {{ item.data.author }}</h3>
-      </article>
+      <li>
+        <p>{{ item.data.title }}</p>
+        <p>{{ item.data.author }}</p>
+      </li>
   {% endfor %}
-  </div>
+  </ul>
 
   <h2>Games</h2>
 
