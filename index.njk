@@ -70,8 +70,15 @@
   {% for item in collections.books %}
       <article class="item">
         <img src="https://covers.openlibrary.org/b/isbn/{{ item.data.isbn }}-L.jpg" alt="{{ item.data.title}} book cover" />
-        <h3>{{ item.data.title }}</h2>
-        <h4>by {{ item.data.author }}</h3>
+        <div>
+          <h3>{{ item.data.title }}</h2>
+          <h4>by {{ item.data.author }}</h3>
+          <ul>
+            <li>{{ item.data.tag }}</li>
+            <li>{{ item.data.format }}</li>
+            <li>{{ item.data.publishYear }}</li>
+          </ul>
+        </div>
       </article>
   {% endfor %}
   </div>
