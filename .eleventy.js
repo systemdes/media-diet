@@ -23,5 +23,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('movies', collection => {
     return collection.getFilteredByGlob('movies/*.md');
   });
+
+  eleventyConfig.addFilter("size", (posts) => {
+		return posts.length;
+  });
   
 };

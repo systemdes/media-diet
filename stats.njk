@@ -8,9 +8,14 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
 
+{% include "header.njk" %}
+
 <main>
+  <h2>Types by year (2020)</h2>
   <canvas id="types"></canvas>
+  <h2>Total per year</h2>
   <canvas id="numbers"></canvas>
+  <h2>Total entries by type</h2>
   <canvas id="total"></canvas>
 </main>
 
@@ -21,8 +26,7 @@ var typeChart = new Chart(types, {
     data: {
         labels: ['Books', 'Movies', 'Series', 'Games'],
         datasets: [{
-            label: 'Distribution of types: Current Year',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [{{ collections.books | size }}, {{ collections.movies | size }}, {{ collections.series | size }}, {{ collections.games | size }}],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -49,6 +53,17 @@ var typeChart = new Chart(types, {
                     beginAtZero: true
                 }
             }]
+        },
+        legend: {
+            display: false,
+        },
+        layout: {
+            padding: {
+                left: 100,
+                right: 100,
+                top: 100,
+                bottom: 70,
+          }
         }
     }
 });
@@ -87,6 +102,17 @@ var numberChart = new Chart(numbers, {
                     beginAtZero: true
                 }
             }]
+        },
+        legend: {
+            display: false,
+        },
+                layout: {
+            padding: {
+                left: 100,
+                right: 100,
+                top: 100,
+                bottom: 70,
+          }
         }
     }
 });
